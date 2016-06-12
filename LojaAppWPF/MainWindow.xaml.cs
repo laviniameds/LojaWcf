@@ -24,5 +24,30 @@ namespace LojaAppWPF
         {
             InitializeComponent();
         }
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            WS.Service1Client ws = new WS.Service1Client();
+            dataGrid.ItemsSource = null;
+            dataGrid.ItemsSource = ws.FabricanteSelect();
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            WS.Service1Client ws = new WS.Service1Client();
+            ws.FabricanteInsert(int.Parse(txtId.Text), txtDesc.Text);
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            WS.Service1Client ws = new WS.Service1Client();
+            ws.FabricanteUpdate(int.Parse(txtId.Text), txtDesc.Text);
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            WS.Service1Client ws = new WS.Service1Client();
+            ws.FabricanteDelete(int.Parse(txtId.Text));
+        }
     }
 }

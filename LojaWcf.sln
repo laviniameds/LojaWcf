@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaWcf", "LojaWcf\LojaWcf.csproj", "{C441FAA8-3439-4E66-BA02-9953752F37D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaAppWPF", "LojaAppWPF\LojaAppWPF.csproj", "{95D5EC55-CA4B-4844-8873-A7FDFA07FF2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C441FAA8-3439-4E66-BA02-9953752F37D9} = {C441FAA8-3439-4E66-BA02-9953752F37D9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
