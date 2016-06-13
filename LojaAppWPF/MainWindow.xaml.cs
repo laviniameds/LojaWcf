@@ -25,29 +25,34 @@ namespace LojaAppWPF
             InitializeComponent();
         }
 
-        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        private void CRUDFab_Click(object sender, RoutedEventArgs e)
         {
-            WS.Service1Client ws = new WS.Service1Client();
-            dataGrid.ItemsSource = null;
-            dataGrid.ItemsSource = ws.FabricanteSelect();
+            (new CRUDFabricante()).Show();
         }
 
-        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        private void Comprar_Click(object sender, RoutedEventArgs e)
         {
-            WS.Service1Client ws = new WS.Service1Client();
-            ws.FabricanteInsert(int.Parse(txtId.Text), txtDesc.Text);
+            (new CompraVeiculo()).Show();
         }
 
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        private void Vender_Click(object sender, RoutedEventArgs e)
         {
-            WS.Service1Client ws = new WS.Service1Client();
-            ws.FabricanteUpdate(int.Parse(txtId.Text), txtDesc.Text);
+            (new VendaVeiculo()).Show();
         }
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private void Todos_Click(object sender, RoutedEventArgs e)
         {
-            WS.Service1Client ws = new WS.Service1Client();
-            ws.FabricanteDelete(int.Parse(txtId.Text));
+            (new TodosVeiculos()).Show();
+        }
+
+        private void Vendidos_Click(object sender, RoutedEventArgs e)
+        {
+            (new VeiculosVendidos()).Show();
+        }
+
+        private void Deletar_Click(object sender, RoutedEventArgs e)
+        {
+            (new DeletarVeiculos()).Show();
         }
     }
 }

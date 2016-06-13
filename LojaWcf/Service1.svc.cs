@@ -33,7 +33,9 @@ namespace LojaWcf
         public List<Fabricante> FabricanteSelect()
         {
             LojaDataContext dc = new LojaDataContext();
-            var ret = from f in dc.Fabricantes select f;
+            var ret = from f in dc.Fabricantes
+                      orderby f.Descricao
+                      select f;
             if (ret.Count() == 0) return null;
             return ret.ToList();
         }
@@ -70,18 +72,40 @@ namespace LojaWcf
             }
         }
 
+        public List<Veiculo> VeiculoSelect()
+        {
+            LojaDataContext dc = new LojaDataContext();
+            var ret = from v in dc.Veiculos
+                      orderby v.Fabricante.Descricao, v.Modelo
+                      select v;
+            if (ret.Count() == 0) return null;
+            return ret.ToList();
+        }
+
         public List<Veiculo> VeiculoSelectDisponiveis()
         {
             LojaDataContext dc = new LojaDataContext();
             var ret = from v in dc.Veiculos
-                      where !v.DataVenda.HasValue select v;
+                      where !(v.PrecoVenda.HasValue)
+                      orderby v.Fabricante.Descricao, v.Modelo
+                      select v;
+            if (ret.Count() == 0) return null;
+            return ret.ToList();
+        }
+
+        public List<Veiculo> VeiculoSelectVendidos()
+        {
+            LojaDataContext dc = new LojaDataContext();
+            var ret = from v in dc.Veiculos
+                      where v.PrecoVenda.HasValue
+                      orderby v.DataVenda
+                      select v;
             if (ret.Count() == 0) return null;
             return ret.ToList();
         }
 
         public void VeiculoInsert(int id, string modelo, int ano, int idFab, 
-            DateTime dataCompra, decimal valorCompra, decimal precoVenda, DateTime dataVenda,
-            decimal valorVenda)
+            DateTime dataCompra, decimal valorCompra)
         {
             LojaDataContext dc = new LojaDataContext();
             Veiculo v = new Veiculo
@@ -92,28 +116,21 @@ namespace LojaWcf
                 IdFabricante = idFab,
                 DataCompra = dataCompra,
                 ValorCompra = valorCompra,
-                PrecoVenda = precoVenda,
-                DataVenda = dataVenda,
-                ValorVenda = valorVenda
+                PrecoVenda = null,
+                DataVenda = null,
+                ValorVenda = null
             };
             dc.Veiculos.InsertOnSubmit(v);
             dc.SubmitChanges();
         }
 
-        public void VeiculoUpdate(int id, string modelo, int ano, int idFab,
-            DateTime dataCompra, decimal valorCompra, decimal precoVenda, DateTime dataVenda,
-            decimal valorVenda)
+        public void VeiculoUpdate(int id, decimal precoVenda, DateTime dataVenda, decimal valorVenda)
         {
             LojaDataContext dc = new LojaDataContext();
             var ret = from v in dc.Veiculos where v.Id == id select v;
             if (ret.Count() >= 0)
             {
                 Veiculo v = ret.Single();
-                v.Modelo = modelo;
-                v.Ano = ano;
-                v.IdFabricante = idFab;
-                v.DataCompra = dataCompra;
-                v.ValorCompra = valorCompra;
                 v.PrecoVenda = precoVenda;
                 v.DataVenda = dataVenda;
                 v.ValorVenda = valorVenda;

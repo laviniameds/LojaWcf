@@ -17,7 +17,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Veiculos" nillable="true" type="tns:ArrayOfVeiculo" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Fabricante" nillable="true" type="tns:Fabricante" />
@@ -29,7 +28,15 @@
   <xs:element name="ArrayOfVeiculo" nillable="true" type="tns:ArrayOfVeiculo" />
   <xs:complexType name="Veiculo">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DataCompra" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DataVenda" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFabricante" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrecoVenda" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorCompra" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ValorVenda" nillable="true" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Veiculo" nillable="true" type="tns:Veiculo" />

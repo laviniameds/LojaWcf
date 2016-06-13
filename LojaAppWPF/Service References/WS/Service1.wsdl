@@ -49,6 +49,18 @@
   <wsdl:message name="IService1_VeiculoSelectDisponiveis_OutputMessage">
     <wsdl:part name="parameters" element="tns:VeiculoSelectDisponiveisResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_VeiculoSelectVendidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:VeiculoSelectVendidos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VeiculoSelectVendidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VeiculoSelectVendidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VeiculoSelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:VeiculoSelect" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VeiculoSelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VeiculoSelectResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_VeiculoInsert_InputMessage">
     <wsdl:part name="parameters" element="tns:VeiculoInsert" />
   </wsdl:message>
@@ -95,6 +107,14 @@
     <wsdl:operation name="VeiculoSelectDisponiveis">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/VeiculoSelectDisponiveis" message="tns:IService1_VeiculoSelectDisponiveis_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/VeiculoSelectDisponiveisResponse" message="tns:IService1_VeiculoSelectDisponiveis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VeiculoSelectVendidos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VeiculoSelectVendidos" message="tns:IService1_VeiculoSelectVendidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VeiculoSelectVendidosResponse" message="tns:IService1_VeiculoSelectVendidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VeiculoSelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VeiculoSelect" message="tns:IService1_VeiculoSelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VeiculoSelectResponse" message="tns:IService1_VeiculoSelect_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="VeiculoInsert">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/VeiculoInsert" message="tns:IService1_VeiculoInsert_InputMessage" />
@@ -167,6 +187,24 @@
     </wsdl:operation>
     <wsdl:operation name="VeiculoSelectDisponiveis">
       <soap:operation soapAction="http://tempuri.org/IService1/VeiculoSelectDisponiveis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VeiculoSelectVendidos">
+      <soap:operation soapAction="http://tempuri.org/IService1/VeiculoSelectVendidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VeiculoSelect">
+      <soap:operation soapAction="http://tempuri.org/IService1/VeiculoSelect" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

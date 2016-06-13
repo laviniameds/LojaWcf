@@ -89,9 +89,6 @@ namespace LojaAppWPF.WS {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private LojaAppWPF.WS.Veiculo[] VeiculosField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -128,19 +125,6 @@ namespace LojaAppWPF.WS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public LojaAppWPF.WS.Veiculo[] Veiculos {
-            get {
-                return this.VeiculosField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VeiculosField, value) != true)) {
-                    this.VeiculosField = value;
-                    this.RaisePropertyChanged("Veiculos");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -161,7 +145,31 @@ namespace LojaAppWPF.WS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> AnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DataCompraField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> DataVendaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdFabricanteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModeloField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PrecoVendaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ValorCompraField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> ValorVendaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -174,6 +182,32 @@ namespace LojaAppWPF.WS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Ano {
+            get {
+                return this.AnoField;
+            }
+            set {
+                if ((this.AnoField.Equals(value) != true)) {
+                    this.AnoField = value;
+                    this.RaisePropertyChanged("Ano");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DataCompra {
+            get {
+                return this.DataCompraField;
+            }
+            set {
+                if ((this.DataCompraField.Equals(value) != true)) {
+                    this.DataCompraField = value;
+                    this.RaisePropertyChanged("DataCompra");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<System.DateTime> DataVenda {
             get {
                 return this.DataVendaField;
@@ -182,6 +216,84 @@ namespace LojaAppWPF.WS {
                 if ((this.DataVendaField.Equals(value) != true)) {
                     this.DataVendaField = value;
                     this.RaisePropertyChanged("DataVenda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IdFabricante {
+            get {
+                return this.IdFabricanteField;
+            }
+            set {
+                if ((this.IdFabricanteField.Equals(value) != true)) {
+                    this.IdFabricanteField = value;
+                    this.RaisePropertyChanged("IdFabricante");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Modelo {
+            get {
+                return this.ModeloField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModeloField, value) != true)) {
+                    this.ModeloField = value;
+                    this.RaisePropertyChanged("Modelo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> PrecoVenda {
+            get {
+                return this.PrecoVendaField;
+            }
+            set {
+                if ((this.PrecoVendaField.Equals(value) != true)) {
+                    this.PrecoVendaField = value;
+                    this.RaisePropertyChanged("PrecoVenda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ValorCompra {
+            get {
+                return this.ValorCompraField;
+            }
+            set {
+                if ((this.ValorCompraField.Equals(value) != true)) {
+                    this.ValorCompraField = value;
+                    this.RaisePropertyChanged("ValorCompra");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> ValorVenda {
+            get {
+                return this.ValorVendaField;
+            }
+            set {
+                if ((this.ValorVendaField.Equals(value) != true)) {
+                    this.ValorVendaField = value;
+                    this.RaisePropertyChanged("ValorVenda");
                 }
             }
         }
@@ -242,17 +354,29 @@ namespace LojaAppWPF.WS {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoSelectDisponiveis", ReplyAction="http://tempuri.org/IService1/VeiculoSelectDisponiveisResponse")]
         System.Threading.Tasks.Task<LojaAppWPF.WS.Veiculo[]> VeiculoSelectDisponiveisAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoInsert", ReplyAction="http://tempuri.org/IService1/VeiculoInsertResponse")]
-        void VeiculoInsert(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoSelectVendidos", ReplyAction="http://tempuri.org/IService1/VeiculoSelectVendidosResponse")]
+        LojaAppWPF.WS.Veiculo[] VeiculoSelectVendidos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoSelectVendidos", ReplyAction="http://tempuri.org/IService1/VeiculoSelectVendidosResponse")]
+        System.Threading.Tasks.Task<LojaAppWPF.WS.Veiculo[]> VeiculoSelectVendidosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoSelect", ReplyAction="http://tempuri.org/IService1/VeiculoSelectResponse")]
+        LojaAppWPF.WS.Veiculo[] VeiculoSelect();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoSelect", ReplyAction="http://tempuri.org/IService1/VeiculoSelectResponse")]
+        System.Threading.Tasks.Task<LojaAppWPF.WS.Veiculo[]> VeiculoSelectAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoInsert", ReplyAction="http://tempuri.org/IService1/VeiculoInsertResponse")]
-        System.Threading.Tasks.Task VeiculoInsertAsync(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda);
+        void VeiculoInsert(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoInsert", ReplyAction="http://tempuri.org/IService1/VeiculoInsertResponse")]
+        System.Threading.Tasks.Task VeiculoInsertAsync(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoUpdate", ReplyAction="http://tempuri.org/IService1/VeiculoUpdateResponse")]
-        void VeiculoUpdate(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda);
+        void VeiculoUpdate(int id, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoUpdate", ReplyAction="http://tempuri.org/IService1/VeiculoUpdateResponse")]
-        System.Threading.Tasks.Task VeiculoUpdateAsync(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda);
+        System.Threading.Tasks.Task VeiculoUpdateAsync(int id, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VeiculoDelete", ReplyAction="http://tempuri.org/IService1/VeiculoDeleteResponse")]
         void VeiculoDelete(int id);
@@ -344,20 +468,36 @@ namespace LojaAppWPF.WS {
             return base.Channel.VeiculoSelectDisponiveisAsync();
         }
         
-        public void VeiculoInsert(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda) {
-            base.Channel.VeiculoInsert(id, modelo, ano, idFab, dataCompra, valorCompra, precoVenda, dataVenda, valorVenda);
+        public LojaAppWPF.WS.Veiculo[] VeiculoSelectVendidos() {
+            return base.Channel.VeiculoSelectVendidos();
         }
         
-        public System.Threading.Tasks.Task VeiculoInsertAsync(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda) {
-            return base.Channel.VeiculoInsertAsync(id, modelo, ano, idFab, dataCompra, valorCompra, precoVenda, dataVenda, valorVenda);
+        public System.Threading.Tasks.Task<LojaAppWPF.WS.Veiculo[]> VeiculoSelectVendidosAsync() {
+            return base.Channel.VeiculoSelectVendidosAsync();
         }
         
-        public void VeiculoUpdate(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda) {
-            base.Channel.VeiculoUpdate(id, modelo, ano, idFab, dataCompra, valorCompra, precoVenda, dataVenda, valorVenda);
+        public LojaAppWPF.WS.Veiculo[] VeiculoSelect() {
+            return base.Channel.VeiculoSelect();
         }
         
-        public System.Threading.Tasks.Task VeiculoUpdateAsync(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda) {
-            return base.Channel.VeiculoUpdateAsync(id, modelo, ano, idFab, dataCompra, valorCompra, precoVenda, dataVenda, valorVenda);
+        public System.Threading.Tasks.Task<LojaAppWPF.WS.Veiculo[]> VeiculoSelectAsync() {
+            return base.Channel.VeiculoSelectAsync();
+        }
+        
+        public void VeiculoInsert(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra) {
+            base.Channel.VeiculoInsert(id, modelo, ano, idFab, dataCompra, valorCompra);
+        }
+        
+        public System.Threading.Tasks.Task VeiculoInsertAsync(int id, string modelo, int ano, int idFab, System.DateTime dataCompra, decimal valorCompra) {
+            return base.Channel.VeiculoInsertAsync(id, modelo, ano, idFab, dataCompra, valorCompra);
+        }
+        
+        public void VeiculoUpdate(int id, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda) {
+            base.Channel.VeiculoUpdate(id, precoVenda, dataVenda, valorVenda);
+        }
+        
+        public System.Threading.Tasks.Task VeiculoUpdateAsync(int id, decimal precoVenda, System.DateTime dataVenda, decimal valorVenda) {
+            return base.Channel.VeiculoUpdateAsync(id, precoVenda, dataVenda, valorVenda);
         }
         
         public void VeiculoDelete(int id) {

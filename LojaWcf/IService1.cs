@@ -35,12 +35,17 @@ namespace LojaWcf
         List<Veiculo> VeiculoSelectDisponiveis();
 
         [OperationContract]
-        void VeiculoInsert(int id, string modelo, int ano, int idFab, DateTime dataCompra,
-            decimal valorCompra, decimal precoVenda, DateTime dataVenda, decimal valorVenda);
+        List<Veiculo> VeiculoSelectVendidos();
 
         [OperationContract]
-        void VeiculoUpdate(int id, string modelo, int ano, int idFab, DateTime dataCompra,
-            decimal valorCompra, decimal precoVenda, DateTime dataVenda, decimal valorVenda);
+        List<Veiculo> VeiculoSelect();
+
+        [OperationContract]
+        void VeiculoInsert(int id, string modelo, int ano, int idFab,
+            DateTime dataCompra, decimal valorCompra);
+
+        [OperationContract]
+        void VeiculoUpdate(int id, decimal precoVenda, DateTime dataVenda, decimal valorVenda);
 
         [OperationContract]
         void VeiculoDelete(int id);

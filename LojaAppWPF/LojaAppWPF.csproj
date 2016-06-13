@@ -57,11 +57,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CompraVeiculo.xaml.cs">
+      <DependentUpon>CompraVeiculo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDFabricante.xaml.cs">
+      <DependentUpon>CRUDFabricante.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeletarVeiculos.xaml.cs">
+      <DependentUpon>DeletarVeiculos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="TodosVeiculos.xaml.cs">
+      <DependentUpon>TodosVeiculos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VeiculosVendidos.xaml.cs">
+      <DependentUpon>VeiculosVendidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VendaVeiculo.xaml.cs">
+      <DependentUpon>VendaVeiculo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CompraVeiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CRUDFabricante.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeletarVeiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +104,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TodosVeiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VeiculosVendidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VendaVeiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -107,14 +149,14 @@
     <None Include="Service References\WS\LojaAppWPF.WS.Veiculo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\WS\Service11.wsdl" />
-    <None Include="Service References\WS\Service13.xsd">
+    <None Include="Service References\WS\Service1.wsdl" />
+    <None Include="Service References\WS\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WS\Service131.xsd">
+    <None Include="Service References\WS\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WS\Service132.xsd">
+    <None Include="Service References\WS\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -128,6 +170,9 @@
     <WCFMetadataStorage Include="Service References\WS\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\WS\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\WS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -138,9 +183,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\WS\Service11.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
